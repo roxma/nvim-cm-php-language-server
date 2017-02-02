@@ -199,6 +199,16 @@ class Handler:
             col = result['col']
             lnum = result['lnum']
 
+        # completion pattern
+        if (re.search(r'^(using|use|require|include)', typed) 
+            or re.search(r'[\w_]{2,}$',typed)
+            or re.search(r'-\>[\w_]*$',typed)
+            or re.search(r'::[\w_]*$',typed)
+            ):
+            pass
+        else:
+            return
+
         # create temp file
         path = ''
         with tempfile.NamedTemporaryFile(prefix='cm_php_',delete=False) as f:
