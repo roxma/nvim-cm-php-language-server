@@ -152,6 +152,11 @@ class LanguageServerClient(threading.Thread):
             # cleanup remove tmp storage from _request_cv
             del self._request_cv[str(id)]
 
+    def shutdown(self):
+        if self._proc:
+            self._proc.terminate()
+            self.join()
+
 
 class Handler:
 
@@ -248,4 +253,6 @@ class Handler:
         finally:
             os.remove(path)
 
+    def cm_shutdown(self):
+        self._php_client.shutdown()
 
