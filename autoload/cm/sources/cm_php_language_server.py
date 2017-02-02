@@ -239,7 +239,7 @@ class Handler:
                 e['icase'] = 1
                 e['word'] = item['label']
                 if 'insertText' in item and item['insertText']:
-                    e['word'] = item['insertText']
+                    e['abbr'] = item['insertText']
                 e['dup'] = 1
                 if 'documentation' in item and item['documentation'] and len(item['documentation']) < 70:
                     e['menu'] = item['documentation']
