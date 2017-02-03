@@ -1,7 +1,7 @@
 # nvim-cm-php-language-server
 
 PHP completion source for
-[nvim-complete-manager](https://github.com/roxma/nvim-complete-manager), using
+[nvim-completion-manager](https://github.com/roxma/nvim-completion-manager), using
 the powerful
 [php-language-server](https://github.com/felixfbecker/php-language-server).
 
