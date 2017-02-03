@@ -203,6 +203,7 @@ class Handler:
         if (re.search(r'^(using|use|require|include)', typed) 
             or re.search(r'[\w_]{2,}$',typed)
             or re.search(r'-\>[\w_]*$',typed)
+            or re.search(r'\$[\w_]*$',typed)
             or re.search(r'::[\w_]*$',typed)
             ):
             pass

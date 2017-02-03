@@ -2,6 +2,7 @@
 au FileType php,markdown call cm#register_source({
 			\ 'name' : 'cm-php-language-server',
 			\ 'priority': 9, 
+			\ 'refresh': 1, 
 			\ 'abbreviation': 'PHP',
 			\ 'channels': [
 			\   {
