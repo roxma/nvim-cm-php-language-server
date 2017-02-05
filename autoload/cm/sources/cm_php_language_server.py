@@ -15,7 +15,7 @@ import os
 import re
 import logging
 import tempfile
-import cm_utils
+import cm
 from neovim.api import Nvim
 
 logger = logging.getLogger(__name__)
@@ -183,21 +183,7 @@ class Handler:
         kwtyped = re.search(r'[0-9a-zA-Z_]*?$',typed).group(0)
         startcol = col-len(kwtyped)
 
-        path, filetype = self._nvim.eval('[expand("%:p"),&filetype]')
-        if filetype not in ['php','markdown']:
-            logger.info('ignore filetype: %s', filetype)
-            return
-
-        src = "\n".join(self._nvim.current.buffer[:])
-
-        if filetype=='markdown':
-            result = cm_utils.check_markdown_code_block(src,['php'],lnum, col)
-            logger.info('try markdown, %s,%s,%s, result: %s', src, col, col, result)
-            if result is None:
-                return
-            src = result['src']
-            col = result['col']
-            lnum = result['lnum']
+        src = cm.get_src(ctx)
 
         # completion pattern
         if (re.search(r'^(using|use|require|include)', typed) 

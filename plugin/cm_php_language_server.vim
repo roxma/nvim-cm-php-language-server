@@ -1,7 +1,8 @@
 
-au FileType php,markdown call cm#register_source({
+call cm#register_source({
 			\ 'name' : 'cm-php-language-server',
 			\ 'priority': 9, 
+			\ 'scopes': ['php'], 
 			\ 'refresh': 1, 
 			\ 'abbreviation': 'PHP',
 			\ 'channels': [
