@@ -9,6 +9,7 @@ call cm#register_source({
 			\   {
 			\		'type': 'python3',
 			\		'path': 'autoload/cm/sources/cm_php_language_server.py',
+			\		'detach': 1,
 			\   }
 			\ ],
 			\ })
