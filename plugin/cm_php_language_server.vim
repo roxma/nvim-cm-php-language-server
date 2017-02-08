@@ -1,5 +1,7 @@
 
-call cm#register_source({
+" When Completion manager is not installed, this autocmd won't cause any error
+" This also avoid loading autoload/cm.vim at vim's startup
+autocmd User CmSetup call cm#register_source({
 			\ 'name' : 'cm-php-language-server',
 			\ 'priority': 9, 
 			\ 'scopes': ['php'], 
