@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import cm
+cm.register_source(name='cm-php-language-server',
+                   abbreviation='PHP',
+                   priority=9,
+                   scopes=['php'],
+                   detach=1)
+
 # For debugging
 # NVIM_PYTHON_LOG_FILE=nvim.log NVIM_PYTHON_LOG_LEVEL=INFO nvim
 
@@ -15,7 +22,6 @@ import os
 import re
 import logging
 import tempfile
-import cm
 from neovim.api import Nvim
 
 logger = logging.getLogger(__name__)
@@ -245,7 +251,7 @@ class Handler:
             # 'kind': 3, 
             # 'documentation': 'Apply a user function to every member of an array'}
 
-            self._nvim.call('cm#complete', info['name'], ctx, startcol, matches, async=True)
+            self._nvim.call('cm#complete', info['name'], ctx, startcol, matches, True, async=True)
 
         finally:
             os.remove(path)
