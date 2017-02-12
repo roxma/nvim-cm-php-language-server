@@ -164,7 +164,7 @@ class LanguageServerClient(threading.Thread):
             self.join()
 
 
-class Handler:
+class Source:
 
     def __init__(self,nvim):
 
