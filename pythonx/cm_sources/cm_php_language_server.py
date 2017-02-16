@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from cm import cm
+import cm
 cm.register_source(name='cm-php-language-server',
                    abbreviation='PHP',
                    priority=9,
