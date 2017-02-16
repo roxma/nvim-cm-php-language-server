@@ -174,7 +174,7 @@ class Source:
 
         self._nvim = nvim
 
-        args = ['php', os.path.join(directory,'../../../vendor/bin/php-language-server.php')]
+        args = ['php', os.path.join(directory,'../../vendor/bin/php-language-server.php')]
 
         self._php_client = LanguageServerClient()
 
