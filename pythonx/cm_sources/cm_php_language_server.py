@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import cm
-cm.register_source(name='cm-php-language-server',
+from cm import register_source, get_src
+register_source(name='cm-php-language-server',
                    abbreviation='PHP',
                    priority=9,
                    scopes=['php'],
@@ -189,7 +189,7 @@ class Source:
         kwtyped = re.search(r'[0-9a-zA-Z_]*?$',typed).group(0)
         startcol = col-len(kwtyped)
 
-        src = cm.get_src(ctx)
+        src = get_src(self._nvim,ctx)
 
         # completion pattern
         if (re.search(r'^(using|use|require|include)', typed) 
