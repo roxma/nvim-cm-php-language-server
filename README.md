@@ -1,3 +1,11 @@
+
+**NOTE: This plugin is not maintained, in favor of
+[LanguageServer-php-neovim](https://github.com/roxma/LanguageServer-php-neovim),
+since
+[LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim) has
+a nicer interface for language server protocol implementation. Go try it, it
+should work better than this plugin.**
+
 # nvim-cm-php-language-server
 
 PHP completion source for
